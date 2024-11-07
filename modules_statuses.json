@@ -1,0 +1,7 @@
+{
+    "Home": true,
+    "Admin": true,
+    "Products": true,
+    "Sales": true,
+    "Settings": true
+}
