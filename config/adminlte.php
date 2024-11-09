@@ -329,6 +329,11 @@ return [
         ],
         ['header' => 'account_settings'],
         [
+            'text' => 'Produtos',
+            'route' => 'product.index',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
             'text' => 'profile',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',

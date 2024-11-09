@@ -4,6 +4,7 @@ namespace Modules\Products\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Modules\Products\Models\Product;
 
 class ProductsController extends Controller
 {
@@ -12,7 +13,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('products::index');
+        $data = Product::paginate(15);
+
+        return view('products::index', compact('data'));
     }
 
     /**
@@ -28,7 +31,17 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = (new Product())->create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+        ]);
+
+        // Adiciona a mensagem de sucesso à sessão
+        $request->session()->flash('success', 'Produto salvo com sucesso!');
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -44,7 +57,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        return view('products::edit');
+        $data = Product::find($id);
+        return view('products::edit', compact('data', 'id'));
     }
 
     /**
@@ -52,7 +66,16 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Product::find($id);
+        $data->name = $request->name;
+        $data->description = $request->description;
+        $data->price = $request->price;
+        $data->quantity = $request->quantity;
+        $data->save();
+
+        $request->session()->flash('success', 'Produto atualizado com sucesso!');
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -60,6 +83,11 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Product::find($id);
+        $data->delete();
+
+        session()->flash('success', 'Produto removido com sucesso!');
+
+        return redirect()->route('product.index');
     }
 }
