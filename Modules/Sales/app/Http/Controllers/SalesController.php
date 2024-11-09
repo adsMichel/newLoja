@@ -14,6 +14,10 @@ class SalesController extends Controller
     {
         return view('sales::index');
     }
+    public function comprovante()
+    {
+        return view('sales::comprovanteVenda');
+    }
 
     /**
      * Show the form for creating a new resource.

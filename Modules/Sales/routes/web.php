@@ -14,6 +14,14 @@ use Modules\Sales\Http\Controllers\SalesController;
 |
 */
 
+
+Route::prefix('sales')->group(function () {
+    Route::get('/sale', [SalesController::class,'index'])->name('sale.index');
+    Route::get('/comprovante', [SalesController::class,'comprovante'])->name('comprovante');
+});
+
+/*
 Route::group([], function () {
     Route::resource('sales', SalesController::class)->names('sales');
 });
+*/

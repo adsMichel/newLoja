@@ -14,6 +14,14 @@ use Modules\Settings\Http\Controllers\SettingsController;
 |
 */
 
+Route::prefix('settings')->group(function () {
+    Route::get('/setting', [SettingsController::class,'index'])->name('setting.index');
+});
+
+/*
 Route::group([], function () {
     Route::resource('settings', SettingsController::class)->names('settings');
 });
+*/
+
+

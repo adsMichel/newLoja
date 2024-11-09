@@ -14,6 +14,12 @@ use Modules\Home\Http\Controllers\HomeController;
 |
 */
 
+Route::prefix('home')->group(function () {
+    Route::get('/home', [HomeController::class,'index'])->name('home.index');
+});
+
+/*
 Route::group([], function () {
     Route::resource('home', HomeController::class)->names('home');
 });
+*/
