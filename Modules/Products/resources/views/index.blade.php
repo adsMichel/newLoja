@@ -90,11 +90,12 @@
                                 <table class="table  table-striped table-bordered table-hover text-nowrap">
                                     <thead>
                                         <tr>
-                                            <th>&nbsp;Cód.</th>
+                                            <th>&nbsp;Cód. Produto</th>
                                             <th>&nbsp;Nome</th>
                                             <th>&nbsp;Preço</th>
                                             <th>&nbsp;Quantidade</th>
                                             <th>&nbsp;Descrição</th>
+                                            <th>&nbsp;Data</th>
                                             <th>&nbsp;Ação</th>
                                         </tr>
                                     </thead>
