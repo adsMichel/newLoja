@@ -3,7 +3,9 @@
 namespace Modules\Sales\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Modules\Sales\Models\SalesOrder;
 
 class SalesController extends Controller
 {
@@ -12,7 +14,10 @@ class SalesController extends Controller
      */
     public function index()
     {
-        return view('sales::index');
+        $data = User::with('salesOrders')->paginate(15);
+        $salesOrders = SalesOrder::paginate();
+        // dd($data);
+        return view('sales::index', compact('data', 'salesOrders'));
     }
 
     /**

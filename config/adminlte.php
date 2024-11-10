@@ -334,8 +334,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'profile',
-            'url' => 'admin/settings',
+            'text' => 'Vendas',
+            'route' => 'sales.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

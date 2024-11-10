@@ -4,6 +4,8 @@ namespace Modules\Products\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Sales\Models\SalesOrderProduct;
+
 // use Modules\Products\Database\Factories\ProductFactory;
 
 class Product extends Model
@@ -20,8 +22,8 @@ class Product extends Model
         'quantity',
     ];
 
-    // protected static function newFactory(): ProductFactory
-    // {
-    //     // return ProductFactory::new();
-    // }
+    public function salesOrderProduct()
+    {
+        return $this->belongsTo(SalesOrderProduct::class);
+    }
 }
