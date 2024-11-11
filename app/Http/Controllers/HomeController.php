@@ -26,10 +26,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function getProducts()
-    {
-        $products = Product::all();
-        return response()->json($products);
-    }
 }

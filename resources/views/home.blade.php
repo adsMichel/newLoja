@@ -4,7 +4,7 @@
 
 @section('content_header')
     <div class="header">
-        <h1>Produtos Disponíveis</h1>
+        <h1>Home Loja</h1>
         <a class="cart-link" href="#">Carrinho de Compras</a>
     </div>
 @stop
@@ -90,7 +90,7 @@
             color: white;
             font-weight: bold;
             position: absolute;
-            margin-top: 50px;
+            margin-top: 75px;
             top: 15px;
             right: 20px;
             background-color: #007bff;
