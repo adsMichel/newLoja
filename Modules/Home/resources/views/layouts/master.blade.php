@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                  <!-- Card do Produto -->
                                 <div class="col-md-3 col-sm-6 mb-4">
                                     <div class="card product-card h-100">
-                                        <img src="{{ route('media.show', [$produto->media[0]->id,'350-300-png']) }}" class="card-img-top" alt="Produto 1">
+                                        <img src="{{ route('media.show', [$produto->media[0]->id,'350-300-webp']) }}" class="card-img-top" alt="Produto 1">
                                         <div class="card-body">
                                             <h5 class="card-title">Produto 1</h5>
                                             <p class="card-text">R$ 99,99</p>
@@ -133,143 +133,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             @endforeach
                         @endif
 
-
-
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
+                        @if (isset($data) && $data->isNotEmpty())
+                            @for ($i = 0; $i < 12; $i++)
+                                <!-- Card do Produto -->
+                                <div class="col-md-3 col-sm-6 mb-4">
+                                    <div class="card product-card h-100">
+                                        <img src="{{ route('media.show', [1,'350-300-png']) }}" class="card-img-top" alt="Produto 1">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Brigadeiro</h5>
+                                            <p class="card-text">R$ 5,99</p>
+                                            <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card do Produto -->
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card product-card h-100">
-                                <img src="{{ route('media.show', [1,'350-300-png']) }}" class="card-img-top" alt="Produto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Produto 1</h5>
-                                    <p class="card-text">R$ 99,99</p>
-                                    <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
+                            @endfor
+                        @endif
                     </div>
                 </div>
 
