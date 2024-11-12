@@ -3,5 +3,6 @@
     "Admin": true,
     "Products": true,
     "Sales": true,
-    "Settings": true
+    "Settings": true,
+    "Media": true
 }
