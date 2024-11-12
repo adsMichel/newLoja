@@ -58,11 +58,11 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleInputFile">File input</label>
+                <label for="media">Photo</label>
                 <div class="input-group">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                    <input type="file" name="media" class="custom-file-input" id="exampleInputFile">
+                    <label class="custom-file-label" for="exampleInputFile">Imagem</label>
                   </div>
                   <div class="input-group-append">
                     <span class="input-group-text">Upload</span>
@@ -81,4 +81,10 @@
 
 @push('js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="{{ asset('vendor/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+    <script>
+        $(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
 @endpush

@@ -4,6 +4,7 @@ namespace Modules\Products\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Modules\Media\Models\Media;
 use Modules\Products\Models\Product;
 
 class ProductsController extends Controller
@@ -31,11 +32,19 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
+        $media['id'] = 1;
+        if ($request->hasFile('image')) {
+            $media = Media::create([
+                'path' => $request->file('image')->store('products', 'local'),
+            ]);
+        }
+
         $product = (new Product())->create([
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
             'quantity' => $request->quantity,
+            'media_id' => $media['id']
         ]);
 
         // Adiciona a mensagem de sucesso à sessão
