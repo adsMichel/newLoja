@@ -124,8 +124,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="card product-card h-100">
                                         <img src="{{ route('media.show', [$produto->media[0]->id,'350-300-webp']) }}" class="card-img-top" alt="Produto 1">
                                         <div class="card-body">
-                                            <h5 class="card-title">Produto 1</h5>
-                                            <p class="card-text">R$ 99,99</p>
+                                            <h5 class="card-title">{{ $produto->name }}</h5>
+                                            <p class="card-text">R$ {{ $produto->price }}</p>
                                             <button class="btn btn-outline-primary btn-sm mt-2 add-to-cart" data-id="1" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
                                         </div>
                                     </div>
