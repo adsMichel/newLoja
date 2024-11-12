@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
+use Modules\Media\Models\Media;
 
 class MediaController extends Controller
 {
@@ -37,7 +38,7 @@ class MediaController extends Controller
     /**
      * Show the specified resource.
      */
-    public function show($id)
+    public function show($id, $size)
     {
       // Encontre a mídia pelo ID
         $media = Media::find($id);

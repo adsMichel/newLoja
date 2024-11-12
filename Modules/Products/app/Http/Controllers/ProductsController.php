@@ -33,9 +33,9 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $media['id'] = 1;
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('media')) {
             $media = Media::create([
-                'path' => $request->file('image')->store('products', 'local'),
+                'path' => $request->file('media')->store('products', 'local')
             ]);
         }
 
@@ -43,9 +43,11 @@ class ProductsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
-            'quantity' => $request->quantity,
-            'media_id' => $media['id']
+            'quantity' => $request->quantity
         ]);
+
+        // Vincule a mídia ao produto
+        $product->media()->attach($media['id']);
 
         // Adiciona a mensagem de sucesso à sessão
         $request->session()->flash('success', 'Produto salvo com sucesso!');

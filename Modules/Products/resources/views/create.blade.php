@@ -15,7 +15,7 @@
 @endsection
 @section('content')
     <div class="card p-3">
-        <form id="formProduct" action="{{ route('product.store') }}" method="post">
+        <form id="formProduct" action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
             @include('products::form')
         </form>
     </div>

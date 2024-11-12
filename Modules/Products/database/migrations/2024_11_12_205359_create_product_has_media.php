@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('medias', function (Blueprint $table) {
+        Schema::create('product_has_media', function (Blueprint $table) {
             $table->id();
-            $table->string('path');
+            $table->bigInteger('product_id')->unsigned();
+            $table->bigInteger('media_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('media_id')->references('id')->on('medias');
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('');
     }
 };

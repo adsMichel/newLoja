@@ -256,7 +256,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Card do Produto -->
                         <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card product-card h-100">
-                                <img src="link_da_imagem_do_produto.jpg" class="card-img-top" alt="Produto 1">
+                                <img src="{{ route('media.show', [1,'10-10-png']) }}" class="card-img-top" alt="Produto 1">
                                 <div class="card-body">
                                     <h5 class="card-title">Produto 1</h5>
                                     <p class="card-text">R$ 99,99</p>

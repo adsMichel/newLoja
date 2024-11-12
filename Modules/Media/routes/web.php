@@ -15,5 +15,5 @@ use Modules\Media\Http\Controllers\MediaController;
 */
 
 Route::prefix('media')->group(function() {
-    Route::get('/show/{id}/{size}', 'MediaController@show')->name('media.show');
+    Route::get('/show/{id}/{size}', [MediaController::class, 'show'])->name('media.show');
 });
