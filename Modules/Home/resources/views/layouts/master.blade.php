@@ -133,7 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             @endforeach
                         @endif
 
-                        @if (isset($data) && $data->isNotEmpty())
+                        @if (!isset($data) && !$data->isNotEmpty())
                             @for ($i = 0; $i < 12; $i++)
                                 <!-- Card do Produto -->
                                 <div class="col-md-3 col-sm-6 mb-4">
