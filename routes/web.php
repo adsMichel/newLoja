@@ -7,10 +7,6 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home::index');
-});
-
 // Auth::routes();
 // Produtos
 Route::get('api/products', [Controller::class, 'getProducts']);
