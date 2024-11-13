@@ -1,4 +1,6 @@
 <?php
+// Não estava carregando as rotas do Media
+require __DIR__ . '/../Modules/Media/routes/web.php';
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
