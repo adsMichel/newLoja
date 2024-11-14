@@ -94,10 +94,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        $data = Product::find($id);
+        $data = Product::with('media')->find($id);
+        $data->media()->detach();
         $data->delete();
-
-        session()->flash('success', 'Produto removido com sucesso!');
 
         return redirect()->route('product.index');
     }
