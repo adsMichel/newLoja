@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 // Produtos
 Route::get('api/products', [Controller::class, 'getProducts']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/turma', [App\Http\Controllers\HomeController::class, 'turma'])->name('home.turma');
 
 Route::prefix('admin')->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');

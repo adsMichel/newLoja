@@ -94,7 +94,6 @@
                                             <th>&nbsp;Nome</th>
                                             <th>&nbsp;Preço</th>
                                             <th>&nbsp;Quantidade</th>
-                                            <th>&nbsp;Descrição</th>
                                             <th>&nbsp;Data</th>
                                             <th>&nbsp;Ação</th>
                                         </tr>
@@ -106,7 +105,6 @@
                                                 <td class="align-middle">{{ $item->name }}</td>
                                                 <td class="align-middle">{{ $item->price }}</td>
                                                 <td class="align-middle">{{ $item->quantity }}</td>
-                                                <td class="align-middle">{{ $item->description }}</td>
                                                 <td class="align-middle">
                                                     {{ \Carbon\Carbon::parse($item->created_at)->tz('America/Sao_Paulo')->format('d/m/Y') }}
                                                 </td>
