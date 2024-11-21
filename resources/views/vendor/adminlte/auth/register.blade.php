@@ -17,6 +17,16 @@
     <form action="{{ url('admin/register') }}" method="post">
         @csrf
 
+        {{-- Register type admin --}}
+        @if ($type == 1)
+            <input type="hidden" name="type" value="1">
+        @endif
+
+        {{-- Register type client --}}
+        @if ($type == 0)
+            <input type="hidden" name="type" value="0">
+        @endif
+
         {{-- Name field --}}
         <div class="input-group mb-3">
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"

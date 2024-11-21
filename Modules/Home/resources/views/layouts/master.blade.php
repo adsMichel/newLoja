@@ -9,6 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Docitos da Ruth</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -284,10 +285,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Main Footer -->
         <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
+            <div class="float-center d-none d-sm-block">
                 <b>Versão</b> 1.0.0
             </div>
-            <strong>Copyright &copy; 2024 <a href="{{ route('home.turma') }}">ADS - Senac - 3º Semestre </a>.</strong> Todos os direitos
+           <strong>Copyright &copy; 2024 <a href="{{ route('home.turma') }}">ADS - Senac - 3º Semestre </a>.</strong> Todos os direitos
             reservado.
 
         </footer>

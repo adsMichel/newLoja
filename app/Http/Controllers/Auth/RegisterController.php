@@ -48,10 +48,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        if ($data['type'] == 0) {
+            $this->redirectTo = '/';
+        }
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'type' => ['required'],
         ]);
     }
 
@@ -67,6 +71,29 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'type' => $data['type']
         ]);
+    }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        $type = 1;
+        return view('auth.register', compact('type'));
+    }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function clientShowRegistrationForm()
+    {
+        $type = 0;
+        return view('auth.register', compact('type'));
     }
 }

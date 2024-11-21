@@ -47,87 +47,54 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge badge-danger navbar-badge"></span>
                 </a>
-                {{-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar"
-                                class="img-size-50 img-circle mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    Nora Silvester
-                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">The subject goes here</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                </div> --}}
             </li>
-            <!-- Notifications Dropdown Menu -->
-            {{-- <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-bell"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <span class="dropdown-header">15 Notifications</span>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-envelope mr-2"></i> 4 new messages
-                        <span class="float-right text-muted text-sm">3 mins</span>
+            @if (Auth::guest())
+                <!-- Links de Registro e Login -->
+                <li class="nav-item">
+                    <a href="{{ route('client.register') }}" class="btn btn-outline-primary mx-1">
+                        <i class="fas fa-user-plus"></i> Registre-se
                     </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> 8 friend requests
-                        <span class="float-right text-muted text-sm">12 hours</span>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('client.login') }}" class="btn btn-primary mx-1">
+                        <i class="fas fa-sign-in-alt"></i> Login
                     </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-file mr-2"></i> 3 new reports
-                        <span class="float-right text-muted text-sm">2 days</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                </div>
-            </li> --}}
-            <li class="nav-item dropdown user-menu">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <img src="/vendor/adminlte/dist/img/user5-128x128.jpg" class="user-image img-circle elevation-2"
-                        alt="Luiz Fernando">
-                    <span class="d-none d-md-inline"> Luiz Fernando </span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <li class="user-header bg-primary">
-                        <img src="/vendor/adminlte/dist/img/profile.jpeg" class="img-circle elevation-2"
+                </li>
+            @else
+                <li class="nav-item dropdown user-menu">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        <img src="/vendor/adminlte/dist/img/avatar.png" class="user-image img-circle elevation-2"
                             alt="Luiz Fernando">
-                        <p class=""> Luiz Fernando <small></small></p>
-                    </li>
-                    <li class="user-footer">
-                        <a href="https://sigin.df.senac.br/instrutor/meu-perfil" class="btn btn-default btn-flat">
-                            <i class="fa fa-fw fa-user text-lightblue"></i>
-                            Perfil
-                        </a>
-                        <a class="btn btn-default btn-flat float-right" href="#"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <i class="fa fa-fw fa-power-off text-red"></i>
-                            Sair
-                        </a>
-                        <form id="logout-form" action="https://sigin.df.senac.br/logout" method="POST"
-                            style="display: none;">
-                            <input type="hidden" name="_token" value="Parz2frGwwpglmw014MltsEe2FrEpNYcbeeWaXs1">
-                        </form>
-                        <form id="logout-form" action="https://sigin.df.senac.br/logout" method="POST"
-                            style="display: none;">
-                            <input type="hidden" name="_token" value="Parz2frGwwpglmw014MltsEe2FrEpNYcbeeWaXs1">
-                        </form>
-                    </li>
-                </ul>
-            </li>
+                        <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <li class="user-header bg-primary">
+                            <img src="/vendor/adminlte/dist/img/avatar.png" class="img-circle elevation-2"
+                                alt="Luiz Fernando">
+                            <p class=""> Luiz Fernando <small></small></p>
+                        </li>
+                        <li class="user-footer">
+                            <a href="https://sigin.df.senac.br/instrutor/meu-perfil" class="btn btn-default btn-flat">
+                                <i class="fa fa-fw fa-user text-lightblue"></i>
+                                Perfil
+                            </a>
+                            <a class="btn btn-default btn-flat float-right" href="#"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa fa-fw fa-power-off text-red"></i>
+                                Sair
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                            </form>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            @endif
 
         </ul>
     </div>

@@ -14,8 +14,5 @@ use Modules\Home\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('loja.home');
 
-Route::group([], function () {
-    Route::resource('home', HomeController::class)->names('home');
-});
